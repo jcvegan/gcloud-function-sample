@@ -36,7 +36,7 @@ resource "google_storage_bucket" "function_bucket" {
 
 data "archive_file" "source" {
   type        = "zip"
-  source_dir  = "scripts/src/Samples.Functions.EventBased"
+  source_dir  = "src/Samples.Functions.EventBased"
   output_path = "/tmp/function.zip"
 }
 
