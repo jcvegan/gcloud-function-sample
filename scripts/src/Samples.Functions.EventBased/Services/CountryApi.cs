@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
-using Samples.Contracts;
+using Samples.Functions.EventBased.Contracts;
 using System.Threading.Tasks;
 
-namespace Samples.Services
+namespace Samples.Functions.EventBased.Services
 {
     public class CountryApi : ICountryApi
     {
@@ -13,11 +13,11 @@ namespace Samples.Services
             _logger = logger;
         }
 
-        public async Task<object> GetCountryInfo(string countryName)
+        public async Task<object> GetCountryInfoAsync(string countryName)
         {
             _logger.LogInformation(countryName);
 
-            return Task.FromResult(countryName);
+            return await Task.FromResult(countryName);
         }
     }
 }

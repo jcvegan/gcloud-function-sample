@@ -1,28 +1,27 @@
 using CloudNative.CloudEvents;
 using Google.Cloud.Functions.Framework;
-using Google.Cloud.Functions.Hosting;
 using Google.Events.Protobuf.Cloud.PubSub.V1;
 using Microsoft.Extensions.Logging;
-using Samples.Contracts;
+using Samples.Functions.EventBased.Contracts;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Samples.Functions.EventBased
 {
-    [FunctionsStartup(typeof(Startup))]
+    //[FunctionsStartup(typeof(Startup))]
     public class Function : ICloudEventFunction<MessagePublishedData>
     {
-        private readonly ICountryApi _countryApi;
+        //private readonly ICountryApi _countryApi;
         private readonly ILogger<Function> _logger;
 
         public Function(ICountryApi countryApi, ILogger<Function> logger)
         {
-            _countryApi = countryApi;
+            //_countryApi = countryApi;
             _logger = logger;
         }
 
-        public Task HandleAsync(CloudEvent cloudEvent, MessagePublishedData data, CancellationToken cancellationToken)
+        public async Task HandleAsync(CloudEvent cloudEvent, MessagePublishedData data, CancellationToken cancellationToken)
         {
             var decodedMessage = data.Message.TextData;
 
@@ -37,8 +36,7 @@ namespace Samples.Functions.EventBased
             Console.WriteLine($"  Time: {cloudEvent.Time?.ToUniversalTime():yyyy-MM-dd'T'HH:mm:ss.fff'Z'}");
             Console.WriteLine($"  SpecVersion: {cloudEvent.SpecVersion}");
 
-            _countryApi.GetCountryInfo(decodedMessage);
-            return Task.CompletedTask;
+            //await _countryApi.GetCountryInfoAsync(decodedMessage);
         }
     }
 }

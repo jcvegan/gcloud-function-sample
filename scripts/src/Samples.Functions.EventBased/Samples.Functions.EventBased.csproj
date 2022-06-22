@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -8,10 +8,5 @@
     <PackageReference Include="Google.Cloud.Functions.Hosting" Version="1.0.0" />
     <PackageReference Include="Google.Events.Protobuf" Version="1.0.0" />
     <None Include="appsettings*.json" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Samples.Contracts\Samples.Contracts.csproj" />
-    <ProjectReference Include="..\Samples.Services\Samples.Services.csproj" />
   </ItemGroup>
 </Project>

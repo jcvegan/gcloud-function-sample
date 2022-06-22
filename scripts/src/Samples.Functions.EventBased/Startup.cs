@@ -1,8 +1,8 @@
 ﻿using Google.Cloud.Functions.Hosting;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using Samples.Contracts;
-using Samples.Services;
+using Samples.Functions.EventBased.Contracts;
+using Samples.Functions.EventBased.Services;
 
 namespace Samples.Functions.EventBased
 {
