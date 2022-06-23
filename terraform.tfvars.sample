@@ -1,0 +1,6 @@
+project_name = {
+  test  = ""
+}
+
+project_region = ""
+project_zone   = ""
