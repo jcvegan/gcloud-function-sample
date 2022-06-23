@@ -15,7 +15,7 @@ namespace Samples.Functions.EventBased
         //private readonly ICountryApi _countryApi;
         private readonly ILogger<Function> _logger;
 
-        public Function(ICountryApi countryApi, ILogger<Function> logger)
+        public Function(/*ICountryApi countryApi,*/ ILogger<Function> logger)
         {
             //_countryApi = countryApi;
             _logger = logger;
